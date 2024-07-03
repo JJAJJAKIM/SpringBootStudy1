@@ -10,4 +10,8 @@ public class HomeController {
 		public String home() {
 			return "index";
 		}
+		@GetMapping("/new")
+		public String newpage() {
+			return "new";
+		}
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://github.com/JosephBean/SpringStudy2/blob/main/src/main/webapp/resources/images/logo.png?raw=true" rel="icon" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>DETAIL</title>
+</head>
+<body>
+    <div class="container mt-3">
+        <h1 class="text-center bg-success text-dark bg-opacity-50">DETAIL</h1>
+        <form action="/list" method="get">
+            <div class="mb-3 mt-3">
+           	 <input type="hidden" class="form-control" id="no" name="no" value="${data.no}">
+              <label for="title" class="form-label">사번:</label>
+              <input type="text" class="form-control" id="empno" placeholder="Enter title" name="empno" th:value="${data.empno}" required autocomplete="off">
+            </div>
+            <div class="mb-3">
+              <label for="content" class="form-label">부서:</label>
+              <input type="text" class="form-control" id="dept_nm" placeholder="Enter content" name="dept_nm" th:value="${data.dept_nm }" autocomplete="off">
+            </div>
+            <div class="mb-3">
+              <label for="content" class="form-label">이름:</label>
+              <input type="text" class="form-control" id="user_nm" placeholder="Enter content" name="user_nm" th:value="${data.user_nm }" autocomplete="off">
+            </div>
+            <div class="mb-3">
+              <label for="content" class="form-label">직급:</label>
+              <input type="text" class="form-control" id="position" placeholder="Enter content" name="position" th:value="${data.position }" autocomplete="off">
+            </div>
+            <div class="mb-3">
+              <label for="content" class="form-label">Email:</label>
+              <input type="text" class="form-control" id="email" placeholder="Enter content" name="email" th:value="${data.email }" autocomplete="off">
+            </div>
+            <div class="mb-3">
+              <label for="content" class="form-label">기타:</label>
+              <input type="text" class="form-control" id="other" placeholder="Enter content" name="other" th:value="${data.other }" autocomplete="off">
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-primary me-md-2" type="submit">수정</button>
+
+                		<a class="btn btn-warning" href="#">미승인</a>                		
+
+                		<a class="btn btn-success" href="#">승인</a>
+
+                <a class="btn btn-secondary" href="/list">취소</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

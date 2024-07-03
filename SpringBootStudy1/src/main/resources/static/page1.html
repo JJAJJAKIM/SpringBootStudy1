@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	* {margin: 0;}
+	header {height: 40px; background-color: darkgray; display: none;}
+	main {background-color: gray;}
+	section {height: 200px;}
+	footer {height: 100px; background-color: lightgray;}
+	.bg {background-color: black;}
+	.bg:hover { background-color: maroon;}
+	@media only screen and (min-width: 834px){
+		header {height: 100px; display: block; }
+	}
+	
+</style>
+<script type="text/javascript">
+	function e1() {
+		document.getElementsByTagName("header")[0].style.display= "block";
+	}
+	function e2() {
+		document.getElementsByTagName("header")[0].style.display= "none";
+	}
+	var check = true;
+	function load(){
+		if(check){
+			e1();		
+		} else {
+			e2();		
+		}
+		check = !check;
+//		document.getElementsByTagName("section")[0].onmouseover = e1;
+//		document.getElementsByTagName("section")[0].onmouseleave = e2;	
+	}
+</script>
+</head>
+<body>
+	<header >
+		Header
+	</header>
+	<main>
+		<section class="bg" onclick="load()"></section>
+		<section></section>
+		<section></section>
+		<section></section>
+		<section></section>
+	</main>
+	<footer>
+		Footer
+	</footer>
+</body>
+</html>

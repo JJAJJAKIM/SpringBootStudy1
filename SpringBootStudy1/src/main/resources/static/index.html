@@ -11,45 +11,39 @@
 	.bg1 {background-color: lightblue;}
 	.bg2 {background-color: lightgreen;}
 	.bg3 {background-color: orange;}
-	.bg4{background-color: black; }
-	.bg5{background-color: gray; }
+	.bg4 {background-color: black; }
+	.bg5 {background-color: gray; }
+	#a {background-color: yellow;}
+	
  	@media only screen and (min-width: 834px) {
 		div {width:calc(100%/2); height:50px; float: left;}
 	} 
 	
 	@media only screen and (min-width: 1080px) {
 		div {height:50px; float: left;}
-		.bg1{background-color: lightblue; width:calc(100%/2);  }
-		.bg2{background-color: lightgreen; width:calc(100%/2);  }
-		.bg3{background-color: black; width:calc(100%/3);  }
-		.bg4{background-color: orange; width:calc(100%/3); }
-		.bg5{background-color: gray; width:calc(100%/3); }
+		div.L2{ width:calc(100%/2); }
+		div.L3{ width:calc(100%/3); }
+
 
 	}
 
 </style>
 </head>
 <body>
-	<div class="bg1"></div>
-	<div class="bg2"></div>
-	<div class="bg3"></div>
-	<div class="bg4"></div>
-	<div class="bg5"></div>
-	<div class="bg1"></div>
-	<div class="bg2"></div>
-	<div class="bg3"></div>
-	<div class="bg4"></div>
-	<div class="bg5"></div>
-	<div class="bg1"></div>
-	<div class="bg2"></div>
-	<div class="bg3"></div>
-	<div class="bg4"></div>
-	<div class="bg5"></div>
-	<div class="bg1"></div>
-	<div class="bg2"></div>
-	<div class="bg3"></div>
-	<div class="bg4"></div>
-	<div class="bg5"></div>
-
+	<div id="a" class="bg1 L2"></div>
+	<div class="bg2 L2"></div>
+	<div class="bg3 L3"></div>
+	<div class="bg4 L3"></div>
+	<div class="bg5 L3"></div>
+	<div class="bg1 L2"></div>
+	<div class="bg2 L2"></div>
+	<div class="bg3 L3"></div>
+	<div class="bg4 L3"></div>
+	<div class="bg5 L3"></div>
+	<div class="bg1 L2"></div>
+	<div class="bg2 L2"></div>
+	<div class="bg3 L3"></div>
+	<div class="bg4 L3"></div>
+	<div class="bg5 L3"></div>
 </body>
 </html>

@@ -18,6 +18,12 @@ repositories {
 }
 
 dependencies {
+
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'//mybatis
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'	//jsp
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'	//mariadb
+	compileOnly 'org.projectlombok:lombok'	//lombok
+	annotationProcessor 'org.projectlombok:lombok'	//lombok
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
