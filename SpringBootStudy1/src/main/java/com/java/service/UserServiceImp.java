@@ -26,9 +26,9 @@ public class UserServiceImp implements UserService{
 		return userMapper.findOne(dto);
 	}
 
-	public UserDTO edit(UserDTO dto) {
-		userMapper.edit(dto);
-		return dto;
+	public int edit(UserDTO dto) {
+		
+		return userMapper.edit(dto);
 	}
 
 	public int save(UserDTO dto) {
@@ -36,9 +36,8 @@ public class UserServiceImp implements UserService{
 		return userMapper.save(dto); 
 	}
 
-	public UserDTO accept(UserDTO dto) {
-		userMapper.accept(dto);
-		return dto;
+	public int status(UserDTO dto) {
+		return userMapper.status(dto);
 	}
 
 }

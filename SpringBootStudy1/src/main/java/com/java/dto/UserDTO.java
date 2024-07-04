@@ -21,6 +21,7 @@ public class UserDTO {
 	private String dept_nm;
 	private String position;
 	private String email;
+	private String status;
 	private String other;
 	
 	

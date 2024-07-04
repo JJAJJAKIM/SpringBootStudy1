@@ -10,9 +10,9 @@
 <body>
     <div class="container mt-3">
         <h1 class="text-center bg-success text-dark bg-opacity-50">DETAIL</h1>
-        <form action="/list" method="get">
+        <form action="/u/edit" method="get">
             <div class="mb-3 mt-3">
-           	 <input type="hidden" class="form-control" id="no" name="no" value="${data.no}">
+           	 <input type="hidden" class="form-control" id="id" name="id" th:value="${data.id}">
               <label for="title" class="form-label">사번:</label>
               <input type="text" class="form-control" id="empno" placeholder="Enter title" name="empno" th:value="${data.empno}" required autocomplete="off">
             </div>
@@ -33,17 +33,20 @@
               <input type="text" class="form-control" id="email" placeholder="Enter content" name="email" th:value="${data.email }" autocomplete="off">
             </div>
             <div class="mb-3">
+              <label for="content" class="form-label">재직 상태:</label>
+              <input type="text" class="form-control" id="status" placeholder="Enter status" name="status" th:value="${data.status }" autocomplete="off" readonly>
+            </div>
+            <div class="mb-3">
               <label for="content" class="form-label">기타:</label>
               <input type="text" class="form-control" id="other" placeholder="Enter content" name="other" th:value="${data.other }" autocomplete="off">
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button class="btn btn-primary me-md-2" type="submit">수정</button>
+					
+                		<a th:if="${data.status == '재직'}"  class="btn btn-warning" th:href="@{/u/status?status=퇴사&id={id}(id=${data.id})}">미승인</a>                		
+                		<a th:unless="${data.status == '재직'}" class="btn btn-success" th:href="@{/u/status?status=재직&id={id}(id=${data.id})}">승인</a>
 
-                		<a class="btn btn-warning" href="#">미승인</a>                		
-
-                		<a class="btn btn-success" href="#">승인</a>
-
-                <a class="btn btn-secondary" href="/list">취소</a>
+                <a class="btn btn-secondary" href="/u/list">취소</a>
             </div>
         </form>
     </div>

@@ -8,8 +8,8 @@ public interface UserService {
 	
 	public List<UserDTO> findList();
 	public UserDTO findOne(UserDTO dto);
-	public UserDTO edit(UserDTO dto);
+	public int edit(UserDTO dto);
 	public int save(UserDTO dto);
-	public UserDTO accept(UserDTO dto);
+	public int status(UserDTO dto);
 	
 }

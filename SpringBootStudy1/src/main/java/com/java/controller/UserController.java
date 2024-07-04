@@ -30,15 +30,17 @@ public class UserController {
 	
 	@PostMapping("/save")
 	public String save(@ModelAttribute UserDTO dto) {
-		int no =  userService.save(dto);
-		log.info("dto > {}", dto);
-		return "redirect:/u/detail?id="+ dto.getId();
+		int result =  userService.save(dto);
+		if(result == 1) {			
+			return "redirect:/u/detail?id="+ dto.getId();
+		} else {
+			return "redirect:/u/new";
+		}
 	}
 	
 	@GetMapping("/detail")
 	public String detailpage(@ModelAttribute UserDTO dto, Model model) {
 		dto = userService.findOne(dto);
-		
 		model.addAttribute("data", dto);
 		return "/views/detail";
 	}
@@ -50,4 +52,23 @@ public class UserController {
 		model.addAttribute("list", list);
 		return "/views/list";
 	}
+	
+	@GetMapping("/edit")
+	public String editpage(@ModelAttribute UserDTO dto){
+		int result = userService.edit(dto);
+		if(result == 1) {			
+			return "redirect:/u/detail?id=" + dto.getId();
+		} else {
+			return "redirect:/u/new";
+		}
+	}
+	
+	@GetMapping("/status")
+	public String editstatus(@ModelAttribute UserDTO dto) {
+		userService.status(dto);
+		log.info("dto > {}", dto);
+		return "redirect:/u/list";
+	}
+	
+	
 }

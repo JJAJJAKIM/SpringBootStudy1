@@ -14,14 +14,24 @@
     <div class="container mt-3">
         <h1 class="text-center bg-success text-dark bg-opacity-50">LIST</h1>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href="/list" class="btn btn-secondary">전체</a>
+            <a href="/u/list" class="btn btn-secondary">전체</a>
             <a href="/list" class="btn btn-success">승인</a>
             <a href="/list" class="btn btn-warning">미승인</a>
-            <a href="/new" class="btn btn-primary">추가</a>
+            <a href="/u/new" class="btn btn-primary">추가</a>
         </div>
+		<div class="list-group m-1 bg-white " display="flex">
+			<div>사번</div>
+			<div>부서</div>
+			<div>이름</div>
+			<div>직급</div>
+			<div>Email</div>
+			<div>재직 상태</div>
+			<div>other</div>		
+				
+		</div>
         <div class="list-group mt-2 text-center">
    		<th:block th:each="data : ${list}">
- 	  		<a class="list-group-item m-1 bg-success display-6" th:href="@{/u/detail?id={id}(id=data.id)}" th:text="${data.empno}"></a>
+ 	  		<a class="list-group-item m-1 bg-success display-6" th:href="@{/u/detail?id={id}(id=${data.id})}" th:text="${data.empno}"></a>
  		</th:block>
         </div>
     </div>
