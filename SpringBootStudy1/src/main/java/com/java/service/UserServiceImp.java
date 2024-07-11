@@ -1,6 +1,7 @@
 package com.java.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -17,8 +18,8 @@ public class UserServiceImp implements UserService{
 	
 	private final UserMapper userMapper;
 	
-	public List<UserDTO> findList() {
-		return userMapper.findList();
+	public List<UserDTO> findList(String status) {
+		return userMapper.findList(status);
 	}
 	
 	public UserDTO findOne(UserDTO dto) {

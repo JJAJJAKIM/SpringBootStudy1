@@ -1,0 +1,48 @@
+<script type="text/javascript">
+	function fn_menu(){
+		document.getElementById('menu').style.display = 'block';
+	}
+	function fn_close(){
+		document.getElementById('menu').style.display = 'none';
+	}
+</script>
+<header>
+	<div class="container">
+		<h1>
+			<a href="/ui/index.html"><img src="/ui/img/logo.png" alt="logo" /></a>
+			<a href="#" class="menubar" onclick="fn_menu();"><img src="/ui/img/ham.png" alt="menubar" /></a>
+		</h1>
+	</div>
+	<nav>
+		<ul id="menu">
+			<li><a href="#"><img src="/ui/img/logo.png" alt="logo" /></a></li>
+			<li>
+				<a href="#">입고차량</a>
+				<ul class="sub">
+					<li><a href="#">입고차량목록</a></li>
+					<li><a href="#">등록</a></li>
+					<li><a href="#">Q&A</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">입고제품</a>
+				<ul class="sub">
+					<li><a href="#">입고차량목록</a></li>
+					<li><a href="#">등록</a></li>
+					<li><a href="#">Q&A</a></li>
+				</ul>					
+			</li>
+			<li>
+				<a href="#">고객지원</a>
+				<ul class="sub">
+					<li><a href="#">입고차량목록</a></li>
+					<li><a href="#">등록</a></li>
+					<li><a href="#">Q&A</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" onclick="fn_close();"><img src="/ui/img/close_icon.png" alt="close icon" /></a>
+			</li>
+		</ul>
+	</nav>
+</header>

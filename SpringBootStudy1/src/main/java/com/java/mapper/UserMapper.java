@@ -1,6 +1,7 @@
 package com.java.mapper;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -15,9 +16,14 @@ import com.java.dto.UserDTO;
 public interface UserMapper {
 
 	
-	@Select("SELECT id, empno, user_nm, dept_nm, position, email, CASE WHEN status = 1 THEN '재직'"
-			+ "WHEN Status = 2 THEN '퇴사' end as status, other FROM user")
-	public List<UserDTO> findList();
+	@Select({"<script>"
+			+ "SELECT id, empno, user_nm, dept_nm, position, email, CASE WHEN status = 1 THEN '재직' "
+			+ "WHEN Status = 2 THEN '퇴사' end as status, other FROM user "
+			+ "<if test=\"status == 1\">WHERE status = 1 </if> "
+			+ "<if test=\"status == 2\">WHERE status = 2 </if> "
+			+ "ORDER BY id DESC "
+			+ "</script>"})
+	public List<UserDTO> findList(String status);
 	
 	@Select("SELECT id, empno, user_nm, dept_nm, position, email, CASE WHEN status = 1 THEN '재직'"
 			+ "WHEN Status = 2 THEN '퇴사' end as status, other FROM user WHERE id = #{id}")

@@ -1,11 +1,13 @@
 package com.java.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -45,10 +47,9 @@ public class UserController {
 		return "/views/detail";
 	}
 	
-	@GetMapping("/list")
-	public String listpage(Model model) {
-		List<UserDTO> list = userService.findList();
-		log.info("list > {}", list);
+	@GetMapping(value = {"/list", "/list/{status:[12]}"})
+	public String listpage(@PathVariable(name = "status", required = false) String status, Model model) {
+		List<UserDTO> list = userService.findList(status);
 		model.addAttribute("list", list);
 		return "/views/list";
 	}
@@ -65,10 +66,22 @@ public class UserController {
 	
 	@GetMapping("/status")
 	public String editstatus(@ModelAttribute UserDTO dto) {
-		userService.status(dto);
-		log.info("dto > {}", dto);
-		return "redirect:/u/list";
+		int result = userService.status(dto);
+		if(result == 1) {
+			log.info("dto > {}", dto);
+			return "redirect:/u/detail?id="+ dto.getId();			
+		} else {
+			return "redirect:/u/listtest";
+		}
 	}
 	
+	@GetMapping(value = {"/listtest", "/listtest/{status:[12]}"})
+	public String listtest(@PathVariable(name = "status", required = false) String status, Model model) {
+		List<UserDTO> list = userService.findList(status);
+		model.addAttribute("list", list);
+		return "/views/test1";
+	}
+	
+
 	
 }

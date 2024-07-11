@@ -1,0 +1,268 @@
+/************************** common ***************************/
+* {
+	margin: 0;
+	box-sizing: border-box;
+	color: #141414;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0
+}
+table {
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+}
+
+.container {
+	position: relative;
+	width: 1280px;
+	margin: 0 auto;
+}
+
+header {
+	position: relative;
+	height: 80px;
+	border-bottom: 1px solid #eee;
+}
+
+header h1 {
+	padding-top: 15px;
+}
+
+header .menubar {
+	position: absolute;
+	right: 0;
+}
+header img {
+	line-height: 10px;
+}
+nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #eee;
+	z-index: 999999;
+}
+
+#menu {
+	display: none;
+}
+nav > ul {
+	width: 1280px;
+    height: 260px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+nav > ul > li {
+	float : left;
+	width: 20%;
+	color: #fff;
+	padding: 0 40px;
+	margin-top: 10px;
+}
+nav > ul > li:nth-child(1) {
+	width: 25%;
+	margin-top: 0;
+}
+nav > ul > li:nth-child(5) {
+	width: 15%;
+	margin-top: 0;
+}
+nav > ul > li > a {
+	display: block;
+	font-size: 18px;
+    font-weight: bold;
+    color: #141414;
+    padding-bottom: 15px;
+}
+
+nav ul li a:hover {
+	color: #2268CF
+}
+
+ul.sub li {
+	padding: 10px 0;
+}
+
+section {
+	position: relative;
+	height: 100vh;
+	
+}
+section.main {
+	background-image: url("/img/main_bg.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+footer{
+	position:absolute;
+	bottom:0;
+	width:100%;
+	color:#444;
+	text-align:center;
+	background-color:rgba(68, 68, 68, 0.1);
+	padding: 30px 0;
+}
+
+/************************** main ***************************/
+
+
+ul.main_box {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	padding-top:200px;	
+}
+ul.main_box li{
+	float:left;
+	width:320px;
+	height:400px;
+	margin:0 20px;
+}
+ul.main_box a {
+	display:block;
+	width:320px;
+	height:400px;
+	border-radius:30px;
+	background-color:#2268CF;
+	text-align:center;
+	padding-top:20px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+ul.main_box p{
+	width:190px;
+	height:190px;
+	border-radius:50%;
+	background-color:#fff;
+	line-height:190px;
+	margin:30px auto 0;
+}
+ul.main_box p img {
+	vertical-align: middle;
+}
+ul.main_box h3{
+	font-size:24px;
+	color:#fff;
+	margin-top:40px;
+}
+
+
+
+/************************** sub1_1 ***************************/
+.title {
+	margin-top: 100px;
+}
+
+.title h1:after {
+	content: "";
+    display: inline-block;
+    width: 2px;
+    height: 30px;
+    background-color: #d9d9d9;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.title h3 {
+	padding-top: 10px;
+}
+
+.sub_title {
+	float: left;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.right {
+	float: right;
+    margin-bottom: 20px;
+}
+.btn_add {
+	display: inline-block;
+	height: 50px;
+	font-size: 18px;
+	font-weight: bold;	
+	color: #fff;	
+	padding: 10px 25px;
+	background-color: #2268cf;
+	border: none;
+	border-radius: 30px;
+	cursor: pointer;
+	
+}
+
+select {
+	-webkit-appearance:none; /* for chrome */
+  	-moz-appearance:none; /*for firefox*/
+  	appearance:none;
+  	cursor: pointer;
+}
+select {
+   background:url("/img/select_arrow.png") no-repeat 85% 50%/9px auto;
+}
+select.sort {
+	height: 50px;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 15px 40px 15px 15px;
+	background-color: rgba(35,104,207, 0.05);
+	border: none;
+	border-radius: 30px;
+}
+
+.table_list {
+	width: 100%;
+	border-top: 3px solid #2368CF;
+}
+.table_list tr th,
+.table_list tr td {
+	text-align: center;	
+	border-bottom: 1px solid #ddd;
+	padding: 15px 10px;
+}
+.table_list tr th {
+	font-size: 16px;
+	font-weight: bold;
+	background-color: rgba(35,104,207, 0.05);
+}
+.v30_4 {
+  width: 271px;
+  height: 841px;
+  background: url("../images/v30_4.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 154px;
+  left: 59px;
+  overflow: hidden;
+}
+.v20_439 {
+  width: 270px;
+  height: 841px;
+  background: rgba(40,40,40,1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+
+/************************** 반응형 ***************************/
+
+@media only screen and (min-width: 834px) {
+}
+
+@media only screen and (min-width: 1080px) {
+}

@@ -46,7 +46,7 @@
                 		<a th:if="${data.status == '재직'}"  class="btn btn-warning" th:href="@{/u/status?status=퇴사&id={id}(id=${data.id})}">미승인</a>                		
                 		<a th:unless="${data.status == '재직'}" class="btn btn-success" th:href="@{/u/status?status=재직&id={id}(id=${data.id})}">승인</a>
 
-                <a class="btn btn-secondary" href="/u/list">취소</a>
+                <a class="btn btn-secondary" href="/u/listtest">취소</a>
             </div>
         </form>
     </div>

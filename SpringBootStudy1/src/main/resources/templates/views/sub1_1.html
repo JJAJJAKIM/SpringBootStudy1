@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>사원 목록</title>
+<link rel="stylesheet" href="/css/style.css" />
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#header").load("/inc/header.html");
+    $("#footer").load("/inc/footer.html");
+});
+</script>
+</head>
+<body>
+	<!-- header include  -->
+	<div id="header"></div>	
+	<section>
+		<div class="container">
+			
+			
+			<div class="title">
+				<h1 class="sub_title">사원 목록</h1>
+				<div class="right">
+		
+					<select class="sort">
+						<option>최신순</option>
+						<option>과거순</option>
+					</select>
+					<a href="/u/new" class="btn_add">등록</a>
+				</div>
+				
+				</div>
+			<table class="table_list">
+				<thead>
+					<tr>
+						<th>사번</th>
+						<th>부서</th>
+						<th>이름</th>
+						<th>직급</th>
+						<th>Email</th>
+						<th>재직상태</th>
+						<th>기타</th>
+					</tr>	
+				</thead>
+				<tbody>
+					<th:block th:each="data : ${list}">
+						<tr>
+							<td th:text="${data.empno}"></td>
+							<td th:text="${data.dept_nm}"></td>
+							<td th:text="${data.user_nm}"></td>
+							<td th:text="${data.position}"></td>
+							<td th:text="${data.email}"></td>
+							<td th:text="${data.status}"></td>
+							<td th:text="${data.other}"></td>
+						</tr>
+					</th:block>
+				</tbody>
+			</table>
+		</div>
+	
+
+
+		<!-- footer include  -->		
+		<div id="footer"></div>	
+	</section>
+</body>
+</html>
