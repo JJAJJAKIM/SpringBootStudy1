@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @CrossOrigin(origins = "*")
 public class HtmlController {
 	
-	
 	@GetMapping("/{html:[0-9]+}")
 	public String menu1(@PathVariable(name = "html") int html, Model model) {
 		
